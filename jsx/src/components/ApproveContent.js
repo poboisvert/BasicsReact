@@ -4,7 +4,7 @@ const ApproveContent = (props) => {
   console.log(props.children.props);
   return (
     <div className="ui card">
-      <div className="content">Time to approve this masterpiece?</div>
+      <div className="content">{props.children}</div>
       <div className="extra content">
         <div className="ui two buttons">
           <div className="ui basic green button">Approve</div>

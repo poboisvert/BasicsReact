@@ -21,8 +21,14 @@ const App = () => {
           {/*    Child card */}
           <CommenDetail author="Keven" timestamp="At 1PM" content="text1" />
         </ApproveContent>
-        <CommenDetail author="Alpatch" timestamp="At 2PM" content="text2" />
-        <CommenDetail author="Nostra" timestamp="At 3PM" content="text3" />
+
+        <ApproveContent>
+          <CommenDetail author="Alpatch" timestamp="At 2PM" content="text2" />
+        </ApproveContent>
+
+        <ApproveContent>
+          <CommenDetail author="Nostra" timestamp="At 3PM" content="text3" />
+        </ApproveContent>
       </div>
 
       {/* <button style={{ color: "red" }}>{buttonExampleObj.text}</button> */}
