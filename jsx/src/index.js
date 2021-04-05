@@ -1,7 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import ApproveContent from "./components/jsx/ApproveContent";
-import CommenDetail from "./components/CommenDetail";
+import CommenDetail from "./components/jsx/CommenDetail";
+import Weather from "./components/jsx/Weather";
 
 const App = () => {
   // Javascript button that we use in the JSX cpde
@@ -15,7 +16,8 @@ const App = () => {
   /*   const buttonExampleObj = { text: "New Value" }; */
 
   return (
-    <>
+    <div className="container">
+      <h1>Children project</h1>
       <div className="ui container comments">
         <ApproveContent>
           {/*    Child card */}
@@ -30,11 +32,13 @@ const App = () => {
           <CommenDetail author="Nostra" timestamp="At 3PM" content="text3" />
         </ApproveContent>
       </div>
+      <h1>Weather project</h1>
 
+      <Weather />
       {/* <button style={{ color: "red" }}>{buttonExampleObj.text}</button> */}
       {/* <button style={{ color: "red" }}>{getButtonValue()}</button> */}
       {/* <button style={{ color: "red" }}>{buttonExample}</button> */}
-    </>
+    </div>
   );
 };
 
