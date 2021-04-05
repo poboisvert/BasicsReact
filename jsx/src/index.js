@@ -16,7 +16,7 @@ const App = () => {
     <div>
       <h1>Hello World</h1>
       <div>
-        <label className="label" for="name">
+        <label className="label" htmlFor="name">
           Enter name
         </label>
         <input id="name" type="text" />
