@@ -1,13 +1,23 @@
-import React, { Component } from "react";
+import React from "react";
 
-export default class Weather extends Component {
+export default class Weather extends React.Component {
+  // Call before anything else
+  constructor(props) {
+    // Require
+    super();
+
+    this.state = { lat: null };
+  }
+
+  // Get window localisation
   render() {
-    // Geet window localisation
     window.navigator.geolocation.getCurrentPosition(
-      (position) => console.log(position),
+      (position) => {
+        this.setState({ lat: position.coords.latitude });
+      },
       (err) => console.log(err)
     );
 
-    return <div>Latitude:</div>;
+    return <div>Latitude: {this.state.lat}</div>;
   }
 }
