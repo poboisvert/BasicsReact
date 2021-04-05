@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import ApproveContent from "./components/ApproveContent";
+import ApproveContent from "./components/jsx/ApproveContent";
 import CommenDetail from "./components/CommenDetail";
 
 const App = () => {
