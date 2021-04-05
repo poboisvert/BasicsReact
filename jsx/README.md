@@ -31,3 +31,9 @@ const App = () => {
  return /*#__PURE__*/React.createElement("h1", null, "Hello World");
 };
 ```
+
+#### Class vs Function Component
+
+Component: To show to the user, specific code in a specific time and hooks, state system to update content on screen
+
+Function: To show to the user, use hooks to run code at a time, Hooks to access state and update screen
