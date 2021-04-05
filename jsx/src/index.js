@@ -1,17 +1,31 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom";
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+const App = () => {
+  // Javascript button that we use in the JSX cpde
+  /*   const buttonExample = "Action"; */
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+  /*   function getButtonValue() {
+    return "This is a value";
+  }
+ */
+
+  const buttonExampleObj = { text: "New Value" };
+
+  return (
+    <div>
+      <h1>Hello World</h1>
+      <div>
+        <label className="label" for="name">
+          Enter name
+        </label>
+        <input id="name" type="text" />
+        <button style={{ color: "red" }}>{buttonExampleObj.text}</button>
+        {/* <button style={{ color: "red" }}>{getButtonValue()}</button> */}
+        {/*      <button style={{ color: "red" }}>{buttonExample}</button> */}
+      </div>
+    </div>
+  );
+};
+
+ReactDOM.render(<App />, document.querySelector("#root"));
