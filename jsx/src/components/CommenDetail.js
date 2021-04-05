@@ -1,6 +1,7 @@
 import React from "react";
 
-const CommenDetail = () => {
+const CommenDetail = (props) => {
+  //console.log(props);
   // Generate Avatar
   function avatarId() {
     let text;
@@ -24,12 +25,12 @@ const CommenDetail = () => {
 
       <div className="content">
         <a href="/" className="author">
-          Paul
+          {props.author}
         </a>
         <div className="metadata">
-          <span className="date">Today at 6PM</span>
+          <span className="date">{props.timestamp}</span>
         </div>
-        <div className="text">My first post</div>
+        <div className="text">{props.content}</div>
       </div>
     </div>
   );
