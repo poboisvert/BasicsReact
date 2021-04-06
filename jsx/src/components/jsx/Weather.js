@@ -1,4 +1,5 @@
 import React from "react";
+import Season from "./Season";
 
 export default class Weather extends React.Component {
   // Without a constructor
@@ -34,7 +35,7 @@ export default class Weather extends React.Component {
     }
 
     if (!this.state.errorMsg && this.state.lat) {
-      return <div>Latitude: {this.state.lat}</div>;
+      return <Season lat={this.state.lat} />;
     }
 
     return <div>Loading - Hell of a page!</div>;
