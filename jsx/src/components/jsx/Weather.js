@@ -6,18 +6,28 @@ export default class Weather extends React.Component {
     // Require
     super();
 
-    this.state = { lat: null };
-  }
+    // Only once then setState - Component
+    // (1) Run n init and (2) run again below at  this.setState({ lat:  ...
+    this.state = { lat: null, errorMsg: "" };
 
-  // Get window localisation
-  render() {
     window.navigator.geolocation.getCurrentPosition(
       (position) => {
         this.setState({ lat: position.coords.latitude });
       },
-      (err) => console.log(err)
+      (err) => this.setState({ errorMsg: err.message })
     );
+  }
 
-    return <div>Latitude: {this.state.lat}</div>;
+  // Get window localisation
+  render() {
+    if (this.state.errorMsg && !this.state.lat) {
+      return <div>Error: {this.state.errorMsg}</div>;
+    }
+
+    if (!this.state.errorMsg && this.state.lat) {
+      return <div>Latitude: {this.state.lat}</div>;
+    }
+
+    return <div>Loading - Hell of a page!</div>;
   }
 }
