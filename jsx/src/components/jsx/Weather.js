@@ -29,8 +29,7 @@ export default class Weather extends React.Component {
     console.log("Component DidUpdate is ON and rerender");
   }
 
-  // Get window localisation
-  render() {
+  renderLoading() {
     if (this.state.errorMsg && !this.state.lat) {
       return <div>Error: {this.state.errorMsg}</div>;
     }
@@ -40,5 +39,10 @@ export default class Weather extends React.Component {
     }
 
     return <Loading message="Loading..." />;
+  }
+
+  // Get window localisation
+  render() {
+    return <div>{this.renderLoading()}</div>;
   }
 }
