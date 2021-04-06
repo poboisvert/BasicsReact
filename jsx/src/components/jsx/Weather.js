@@ -1,4 +1,5 @@
 import React from "react";
+import { Loading } from "./Loading";
 import Season from "./Season";
 
 export default class Weather extends React.Component {
@@ -38,6 +39,6 @@ export default class Weather extends React.Component {
       return <Season lat={this.state.lat} />;
     }
 
-    return <div>Loading - Hell of a page!</div>;
+    return <Loading message="Loading..." />;
   }
 }

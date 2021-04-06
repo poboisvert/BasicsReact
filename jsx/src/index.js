@@ -17,6 +17,12 @@ const App = () => {
 
   return (
     <div className="container">
+      {/*  Project 1 */}
+      <h1>Weather project</h1>
+
+      <Weather />
+
+      {/* Project 2 */}
       <h1>Children project</h1>
       <div className="ui container comments">
         <ApproveContent>
@@ -32,9 +38,7 @@ const App = () => {
           <CommenDetail author="Nostra" timestamp="At 3PM" content="text3" />
         </ApproveContent>
       </div>
-      <h1>Weather project</h1>
 
-      <Weather />
       {/* <button style={{ color: "red" }}>{buttonExampleObj.text}</button> */}
       {/* <button style={{ color: "red" }}>{getButtonValue()}</button> */}
       {/* <button style={{ color: "red" }}>{buttonExample}</button> */}

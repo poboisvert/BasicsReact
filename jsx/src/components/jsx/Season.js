@@ -1,20 +1,37 @@
 import React from "react";
+import "./Season.css";
+
+const seasonStorage = {
+  summer: {
+    text: "Bring one or two beers",
+    icon: "sun",
+  },
+  winter: {
+    text: "Maple Sirup is back",
+    icon: "snowflake",
+  },
+};
 
 const getSeason = (lat, month) => {
   if (month > 2 && month < 9) {
-    return lat > 0 ? "Summer" : "Winter";
+    return lat > 0 ? "summer" : "winter";
   } else {
-    return lat > 0 ? "Winter" : "Summer";
+    return lat > 0 ? "winter" : "summer";
   }
 };
 
 const Season = (props) => {
-  const seasonResult = getSeason(props.lat, new Date().getMonth());
+  // Pass lat and the month associated
+  const season = getSeason(props.lat, new Date().getMonth());
 
-  console.log(seasonResult);
+  // Find the text and icon from storage
+  const { text, icon } = seasonStorage[season];
+
   return (
-    <div>
-      {seasonResult == "winter" ? "Bring a hat" : "Bring one or 2 beers"}
+    <div className={`season-filter ${season}`}>
+      <i className={`left massive ${icon} icon `} />
+      <h1>{text}</h1>
+      <i className={`right massive ${icon} icon `} />
     </div>
   );
 };
