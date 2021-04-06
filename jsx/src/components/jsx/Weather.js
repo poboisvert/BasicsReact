@@ -1,17 +1,20 @@
 import React from "react";
 
 export default class Weather extends React.Component {
+  // Without a constructor
+  state = { lat: null, errorMsg: "" };
   // Call before anything else
-  constructor(props) {
+  /*   constructor(props) {
     // Require
     super();
+
+    // Only once then setState - Component
+    // (1) Run n init and (2) run again below at  this.setState({ lat:  ...
     this.state = { lat: null, errorMsg: "" };
-  }
+  } */
 
   componentDidMount() {
     console.log("Component DidMount is ON");
-    // Only once then setState - Component
-    // (1) Run n init and (2) run again below at  this.setState({ lat:  ...
 
     window.navigator.geolocation.getCurrentPosition(
       (position) => this.setState({ lat: position.coords.latitude }),
