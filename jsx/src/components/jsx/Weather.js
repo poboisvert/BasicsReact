@@ -18,6 +18,15 @@ export default class Weather extends React.Component {
     );
   }
 
+  componentDidMount() {
+    console.log("Component DidMount is ON");
+  }
+
+  componentDidUpdate() {
+    // Run after getting the lat
+    console.log("Component DidUpdate is ON and rerender");
+  }
+
   // Get window localisation
   render() {
     if (this.state.errorMsg && !this.state.lat) {
