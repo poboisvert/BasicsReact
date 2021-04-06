@@ -5,21 +5,18 @@ export default class Weather extends React.Component {
   constructor(props) {
     // Require
     super();
-
-    // Only once then setState - Component
-    // (1) Run n init and (2) run again below at  this.setState({ lat:  ...
     this.state = { lat: null, errorMsg: "" };
-
-    window.navigator.geolocation.getCurrentPosition(
-      (position) => {
-        this.setState({ lat: position.coords.latitude });
-      },
-      (err) => this.setState({ errorMsg: err.message })
-    );
   }
 
   componentDidMount() {
     console.log("Component DidMount is ON");
+    // Only once then setState - Component
+    // (1) Run n init and (2) run again below at  this.setState({ lat:  ...
+
+    window.navigator.geolocation.getCurrentPosition(
+      (position) => this.setState({ lat: position.coords.latitude }),
+      (err) => this.setState({ errorMsg: err.message })
+    );
   }
 
   componentDidUpdate() {

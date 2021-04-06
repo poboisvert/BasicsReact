@@ -38,7 +38,7 @@ Component: To show to the user, specific code in a specific time and hooks, stat
 
 Function: To show to the user, use hooks to run code at a time, Hooks to access state and update screen
 
-##### Component Lifecycle
+##### Component Lifecycle (Most popular)
 
 They will be call automatically by React
 
