@@ -76,3 +76,41 @@ They will be call automatically by React
 - 5 - componentWillUnmount -> We need to remove the component from the interface - clean up
 
 ### Hooks Folder function based
+
+#### useState - Hooks
+
+Will run at initial, every rerender if data has changed
+
+```
+  useEffect(() => {}, [term]);
+```
+
+Will run at initial
+
+```
+  useEffect(() => {}, []);
+```
+
+Will run at initial, every rerender
+
+```
+  useEffect(() => {});
+```
+
+#### Callback
+
+```(async () => {
+      await axios.get("https://api.agify.io/?name=bella");
+    })();
+```
+
+- OR
+  ```
+  axios.get("https://api.agify.io/?name=memma").then((res) => {
+    console.log(res.data);
+  });
+  ```
+
+```
+
+```
