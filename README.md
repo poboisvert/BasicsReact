@@ -2,6 +2,8 @@
 
 ### JSX Folder classe based
 
+![preview](classes.png)
+
 - JSX is not HTML, but with Babel to be converted to ES6
 
 - style={{ color: 'red' }} in JSX and style="color:#000" in ES6

@@ -3,7 +3,7 @@ import "./Season.css";
 
 const seasonStorage = {
   summer: {
-    text: "Bring one or two beers",
+    text: "Gin and Soda Season",
     icon: "sun",
   },
   winter: {
@@ -29,9 +29,9 @@ const Season = (props) => {
 
   return (
     <div className={`season-filter ${season}`}>
-      <i className={`left massive ${icon} icon `} />
+      <i className={`top massive ${icon} icon `} />
       <h1>{text}</h1>
-      <i className={`right massive ${icon} icon `} />
+      {/*      <i className={`bottom massive ${icon} icon `} /> */}
     </div>
   );
 };

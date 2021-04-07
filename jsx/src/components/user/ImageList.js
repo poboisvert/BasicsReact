@@ -5,7 +5,7 @@ import ImageCard from "./ImageCard";
 import "./ImageList.css";
 
 const ImageList = (props) => {
-  //console.log(props);
+  console.log(props);
 
   const img = props.images.map((img) => {
     // Key are for performance in loading the updated data

@@ -25,7 +25,7 @@ export default class SearchBar extends Component {
     //console.log(this.state.term);
     // onSubmit props we pass onSubmitSearch
     // From App.js - <SearchBar onSubmit={this.onSubmitSearch} />
-    this.props.onSubmit(this.state.term);
+    this.props.onParentSubmit(this.state.term);
   };
 
   render() {

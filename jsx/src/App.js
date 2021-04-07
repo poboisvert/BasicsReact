@@ -1,24 +1,19 @@
 import React from "react";
 
 // JSX Component
-import ApproveContent from "./jsx/ApproveContent";
-import CommenDetail from "./jsx/CommenDetail";
-import Weather from "./jsx/Weather";
+import ApproveContent from "./components/jsx/ApproveContent";
+import CommenDetail from "./components/jsx/CommenDetail";
+import Weather from "./components/jsx/Weather";
 
 // Search Component
-import SearchBar from "./user/SearchBar";
-import fetchImage from "../api/fetchImage";
-import ImageList from "./user/ImageList";
-import SearchNav from "./videos/SearchNav";
+import SearchBar from "./components/user/SearchBar";
+import fetchImage from "./api/fetchImage";
+import ImageList from "./components/user/ImageList";
 
 //const App = () => {
 
 class App extends React.Component {
-  //
-  //
-  // Photos
-  //
-  //
+  // State Init
   state = { images: [] };
 
   onSubmitSearch = async (term) => {
@@ -51,47 +46,35 @@ class App extends React.Component {
  */
 
   /*   const buttonExampleObj = { text: "New Value" }; */
-
-  //
-  //
-  // Player
-  //
-  //
-
-  onTextSubmit = async (text) => {
-    console.log(text);
-    const res = await youtube.get("/search", {
-      params: {
-        q: text,
-      },
-    });
-
-    this.setState({ videos: res.data.items });
-  };
-
-  //
   render() {
     return (
       <div className="container">
+        {/*  Project 1 */}
+        <h1>Weather project</h1>
+        <Weather />
+
+        {/* Project 2 */}
+        <h1>Children project</h1>
         <div className="ui container comments">
-          {/*  Project 1 */}
-          <h1>Weather project</h1>
-          {/*           <Weather /> */}
-          {/* Project 2 */}
-          <h1>Children project</h1>
           <ApproveContent>
             {/*    Child card */}
             <CommenDetail author="Keven" timestamp="At 1PM" content="text1" />
           </ApproveContent>
+
           <ApproveContent>
             <CommenDetail author="Alpatch" timestamp="At 2PM" content="text2" />
           </ApproveContent>
+
           <ApproveContent>
             <CommenDetail author="Nostra" timestamp="At 3PM" content="text3" />
           </ApproveContent>
-          {/*  Project 3 */}
-          <h1>User Project</h1>
-          <SearchBar onSubmit={this.onSubmitSearch} />
+        </div>
+
+        {/*  Project 3 */}
+        <h1>User Project</h1>
+        <div className="ui container">
+          <SearchBar onParentSubmit={this.onSubmitSearch} />
+
           {/*    Parent to child - prop */}
           <ImageList images={this.state.images} />
         </div>
