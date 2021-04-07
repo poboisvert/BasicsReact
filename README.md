@@ -1,22 +1,6 @@
-### JSX Project
+## JSX Project
 
-#### In a class that include a constructor() {}
-
-- If not extending, do not need super()
-
-#### Fetch + Axios
-
-- Fetch: Build-in Browser. Basic tool, but it's easy
-
-- Axios: npm install axios. Complete tool
-
-#### NPM vs NPX
-
-- NPX is for newer version of Node and should use to execute.
-
-- NPM to install and support all versions
-
-#### JSX
+### JSX Folder classe based
 
 - JSX is not HTML, but with Babel to be converted to ES6
 
@@ -41,6 +25,22 @@ const App = () => {
  return /*#__PURE__*/React.createElement("h1", null, "Hello World");
 };
 ```
+
+#### In a class that include a constructor() {}
+
+- If not extending, do not need super()
+
+#### Fetch + Axios
+
+- Fetch: Build-in Browser. Basic tool, but it's easy
+
+- Axios: npm install axios. Complete tool
+
+#### NPM vs NPX
+
+- NPX is for newer version of Node and should use to execute.
+
+- NPM to install and support all versions
 
 #### Common state issue
 
@@ -73,4 +73,4 @@ They will be call automatically by React
 
 - 5 - componentWillUnmount -> We need to remove the component from the interface - clean up
 
-##### Controlled vs Uncontrolled Input
+### Hooks Folder function based

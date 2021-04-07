@@ -8,6 +8,13 @@ __pycache__/
 
 .DS_Store
 jsx/node_modules
+jsx/package-lock.json
+jsx/src/components/videos/youtube.js
+
+hooks/node_modules
+hooks/package-lock.json
+
+
 
 # Distribution / packaging
 .Python
