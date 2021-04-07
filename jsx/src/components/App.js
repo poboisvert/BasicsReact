@@ -8,6 +8,7 @@ import Weather from "./jsx/Weather";
 // Search Component
 import SearchBar from "./user/SearchBar";
 import fetchImage from "../api/fetchImage";
+import ImageList from "./user/ImageList";
 
 //const App = () => {
 
@@ -50,7 +51,7 @@ class App extends React.Component {
       <div className="container">
         {/*  Project 1 */}
         <h1>Weather project</h1>
-        {/*    <Weather /> */}
+        <Weather />
 
         {/* Project 2 */}
         <h1>Children project</h1>
@@ -73,7 +74,9 @@ class App extends React.Component {
         <h1>User Project</h1>
         <div className="ui container">
           <SearchBar onSubmit={this.onSubmitSearch} />
-          Found: {this.state.images.length} images
+
+          {/*    Parent to child - prop */}
+          <ImageList images={this.state.images} />
         </div>
         {/* <button style={{ color: "red" }}>{buttonExampleObj.text}</button> */}
         {/* <button style={{ color: "red" }}>{getButtonValue()}</button> */}

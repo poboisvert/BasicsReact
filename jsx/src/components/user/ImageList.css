@@ -1,0 +1,11 @@
+.image-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+.image-container > img {
+  flex: 25%;
+  max-width: 25%;
+  padding: 10px 10px;
+}
