@@ -1,5 +1,15 @@
 ### JSX Project
 
+#### In a class that include a constructor() {}
+
+- If not extending, do not need super()
+
+#### Fetch + Axios
+
+- Fetch: Build-in Browser. Basic tool, but it's easy
+
+- Axios: npm install axios. Complete tool
+
 #### NPM vs NPX
 
 - NPX is for newer version of Node and should use to execute.
@@ -32,6 +42,11 @@ const App = () => {
 };
 ```
 
+#### Common state issue
+
+- Unhandled Rejection (TypeError): this.setState is not a function
+- Solution: use an arrow function
+
 #### Class vs Function Component
 
 Component: To show to the user, specific code in a specific time and hooks, state system to update content on screen. Older ract user component since it was the one with state.
@@ -57,3 +72,5 @@ They will be call automatically by React
 * (pending and wait until the componenet is not shown)
 
 - 5 - componentWillUnmount -> We need to remove the component from the interface - clean up
+
+##### Controlled vs Uncontrolled Input
