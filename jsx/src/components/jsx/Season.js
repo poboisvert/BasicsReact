@@ -3,7 +3,7 @@ import "./Season.css";
 
 const seasonStorage = {
   summer: {
-    text: "Gin and Soda Season",
+    text: "Soda Season",
     icon: "sun",
   },
   winter: {

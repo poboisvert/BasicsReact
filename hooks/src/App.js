@@ -32,13 +32,13 @@ const App = () => {
     <div>
       <Translate />
       <Search />
-      {/*       <Dropdown
+      <Dropdown
         selected={selected}
         onSelectedChange={setSelected}
         options={options}
-      /> */}
+      />
 
-      {/*  <Accordion items={itemsList} /> */}
+      <Accordion items={itemsList} />
     </div>
   );
 };
