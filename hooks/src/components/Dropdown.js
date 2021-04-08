@@ -1,21 +1,26 @@
 import React, { useEffect, useState, useRef } from "react";
 
-const Dropdown = ({ options, selected, onSelectedChange }) => {
+const Dropdown = ({ label, options, selected, onSelectedChange }) => {
   const [activate, setActivate] = useState(false);
   const ref = useRef();
 
   // Close dropdown if click outside the dropdown
   useEffect(() => {
-    // Body listenner
-    document.body.addEventListener(
-      "click",
-      (e) => {
-        /*         console.log("click");
-        console.log(e.target); */
-        setActivate(false);
-      },
-      { capture: true }
-    );
+    const onBodyClick = (event) => {
+      // Select and close earlier
+      if (ref.current.contains(event.target)) {
+        return;
+      }
+      setActivate(false);
+    };
+
+    document.body.addEventListener("click", onBodyClick, { capture: true });
+
+    return () => {
+      document.body.removeEventListener("click", onBodyClick, {
+        capture: true,
+      });
+    };
   }, []);
 
   const optionsHTML = options.map((option) => {
@@ -43,7 +48,7 @@ const Dropdown = ({ options, selected, onSelectedChange }) => {
   return (
     <div ref={ref} lassName="ui form">
       <div className="field">
-        <label className="label">Select</label>
+        <label className="label">{label}</label>
         <div
           onClick={() => {
             // Item selected

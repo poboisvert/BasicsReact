@@ -59,21 +59,21 @@ Function: To show to the user, use hooks to run code at a time, Hooks to access 
 
 They will be call automatically by React
 
-- 1 - constructor
+##### 1 - constructor
 
-- 2 - render (Must be there - always)
+##### 2 - render (Must be there - always)
 
-* (content while on screen - JSX usually)
+- (content while on screen - JSX usually)
 
-- 3 - componentDidMount() {} is call one time after the render is done
+##### 3 - componentDidMount() {} is call one time after the render is done
 
-* (pending and wait to receive an update)
+- (pending and wait to receive an update)
 
-- 4 - componentDidUpdate
+##### 4 - componentDidUpdate
 
-* (pending and wait until the componenet is not shown)
+- (pending and wait until the componenet is not shown)
 
-- 5 - componentWillUnmount -> We need to remove the component from the interface - clean up
+##### 5 - componentWillUnmount -> We need to remove the component from the interface - clean up
 
 ### Hooks Folder function based
 
