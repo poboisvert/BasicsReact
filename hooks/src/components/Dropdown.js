@@ -1,13 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 
 const Dropdown = ({ options, selected, onSelectedChange }) => {
   const [activate, setActivate] = useState(false);
+  const ref = useRef();
 
   // Close dropdown if click outside the dropdown
   useEffect(() => {
+    // Body listenner
     document.body.addEventListener(
       "click",
-      () => {
+      (e) => {
+        /*         console.log("click");
+        console.log(e.target); */
         setActivate(false);
       },
       { capture: true }
@@ -24,18 +28,28 @@ const Dropdown = ({ options, selected, onSelectedChange }) => {
       <div
         key={option.value}
         className="item"
-        onClick={() => onSelectedChange(option)}
+        onClick={() => {
+          onSelectedChange(option);
+          /*  console.log("click form"); */
+        }}
       >
         {option.label}
       </div>
     );
   });
+
+  console.log(ref.current);
+
   return (
-    <div className="ui form">
+    <div ref={ref} lassName="ui form">
       <div className="field">
         <label className="label">Select</label>
         <div
-          onClick={() => setActivate(!activate)}
+          onClick={() => {
+            // Item selected
+            setActivate(!activate);
+            /*     console.log("click dropdown"); */
+          }}
           className={`ui selection dropdown ${
             activate ? "visible active" : ""
           }`}
