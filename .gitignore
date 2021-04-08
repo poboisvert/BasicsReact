@@ -7,6 +7,7 @@ __pycache__/
 *.so
 
 .DS_Store
+
 jsx/node_modules
 jsx/package-lock.json
 jsx/src/components/videos/youtube.js
@@ -15,6 +16,11 @@ hooks/node_modules
 hooks/package-lock.json
 
 
+redux/node_modules
+redux/package-lock.json
+
+advanced/node_modules
+advanced/package-lock.json
 
 # Distribution / packaging
 .Python

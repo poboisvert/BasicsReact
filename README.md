@@ -10,6 +10,8 @@
 
 > www.babeljs.io
 
+> https://reactjs.org/docs/introducing-jsx.html
+
 VS Code - JSX
 
 ```
@@ -58,6 +60,20 @@ Function: To show to the user, use hooks to run code at a time, Hooks to access 
 ##### Component Lifecycle (Most popular)
 
 They will be call automatically by React
+
+```
+import React, { Component } from "react";
+
+export default class SongPlayer extends Component
+```
+
+Or
+
+```
+import React from "react";
+
+export default class SongPlayer extends React.Component
+```
 
 ##### 1 - constructor
 
@@ -112,6 +128,14 @@ Will run at initial, every rerender
   });
   ```
 
-#### useRef
+#### Redux
 
-- ref={ref}
+  <Provider store="createStore(reducers)">
+    <App />
+  </Provider>,
+
+#### Export
+
+- import aaa if export default aaa
+
+- import { bbb } if export bbb
