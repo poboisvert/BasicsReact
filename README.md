@@ -99,7 +99,8 @@ Will run at initial, every rerender
 
 #### Callback
 
-```(async () => {
+```
+(async () => {
       await axios.get("https://api.agify.io/?name=bella");
     })();
 ```
@@ -111,6 +112,4 @@ Will run at initial, every rerender
   });
   ```
 
-```
-
-```
+#### useRef
