@@ -130,12 +130,24 @@ Will run at initial, every rerender
 
 #### Redux
 
+![preview](redux.png)
+
   <Provider store="createStore(reducers)">
     <App />
-  </Provider>,
+  </Provider>
+
+THe payload is not mandatory, but the type is.
+
+Component will be connected with connect()
+
+- Reducer wil return something and not undefined
 
 #### Export
 
 - import aaa if export default aaa
 
 - import { bbb } if export bbb
+
+### LODASH
+
+Javascript helper
