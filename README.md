@@ -1,6 +1,6 @@
 ## JSX Project
 
-### JSX Folder classe based
+### JSX Folder classes based
 
 ![preview](classes.png)
 
@@ -142,6 +142,8 @@ Component will be connected with connect()
 
 - Reducer wil return something and not undefined
 
+(REDUX) -> MapStateToProps -> (COMPONENT)(props) -> DOM
+
 #### Export
 
 - import aaa if export default aaa
@@ -151,3 +153,5 @@ Component will be connected with connect()
 ### LODASH
 
 Javascript helper
+Object => {}
+Array => []
