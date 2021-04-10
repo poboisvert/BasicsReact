@@ -16,21 +16,21 @@ const App = () => {
         </div>
       </header>
       <main>
-        <div className='max-w-7xl mx-auto py-6 sm:px-6 lg:px-8'>
-          <BrowserRouter>
-            <div>
-              <Header />
-              <Route path='/' exact component={List} />
-              <Route path='/streams/new' exact component={Create} />
-              <Route path='/streams/edit' exact component={Edit} />
-              <Route path='/streams/delete' exact component={Delete} />
-              <Route path='/streams/show' exact component={Show} />
+        <BrowserRouter>
+          <div className='max-w-7xl mx-auto py-6 sm:px-6 lg:px-8'>
+            <Header />
+
+            <div className='px-4 py-6 sm:px-0'>
+              <div className='border-4 border-dashed border-gray-200 rounded-lg h-96'>
+                <Route path='/' exact component={List} />
+                <Route path='/streams/new' exact component={Create} />
+                <Route path='/streams/edit' exact component={Edit} />
+                <Route path='/streams/delete' exact component={Delete} />
+                <Route path='/streams/show' exact component={Show} />
+              </div>
             </div>
-          </BrowserRouter>
-          <div className='px-4 py-6 sm:px-0'>
-            <div className='border-4 border-dashed border-gray-200 rounded-lg h-96'></div>
           </div>
-        </div>
+        </BrowserRouter>
       </main>
     </>
   );

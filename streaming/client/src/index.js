@@ -10,7 +10,7 @@ import App from './components/App';
 import reducers from './reducers';
 
 // applyMiddleware compose and redux dev tool
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose; // Redux devtool google chrome activation
 // Redux store
 const store = createStore(reducers, composeEnhancers(applyMiddleware()));
 
