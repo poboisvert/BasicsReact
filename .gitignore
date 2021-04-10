@@ -22,6 +22,10 @@ redux/package-lock.json
 advanced/node_modules
 advanced/package-lock.json
 
+streaming/client/node_modules
+streaming/client/package-lock.json
+
+
 # Distribution / packaging
 .Python
 build/
