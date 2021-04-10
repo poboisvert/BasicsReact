@@ -15,13 +15,31 @@ const Header = () => {
                     to='/'
                     className='text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium'
                   >
-                    Streamy
+                    Home
                   </Link>
                   <Link
-                    to='/'
+                    to='/streams/new'
                     className='text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium'
                   >
-                    All Streams
+                    Create
+                  </Link>
+                  <Link
+                    to='/streams/delete'
+                    className='text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium'
+                  >
+                    Delete
+                  </Link>
+                  <Link
+                    to='/streams/edit'
+                    className='text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium'
+                  >
+                    Edit
+                  </Link>
+                  <Link
+                    to='/streams/list'
+                    className='text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium'
+                  >
+                    List
                   </Link>
                 </div>
               </div>
