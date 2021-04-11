@@ -4,7 +4,7 @@ import React from 'react';
 /* import { BrowserRouter, Route } from 'react-router-dom';
  */
 import { Router, Route } from 'react-router-dom';
-import history from '../history';
+import history from './history';
 
 // components
 import Header from './Header';
@@ -32,7 +32,7 @@ const App = () => {
                 <Route path='/streams/new' exact component={Create} />
                 {/* EDIT */}
                 <Route path='/streams/edit/:id' exact component={Edit} />
-                <Route path='/streams/delete' exact component={Delete} />
+                <Route path='/streams/delete/:id' exact component={Delete} />
                 <Route path='/streams/show' exact component={Show} />
               </div>
             </div>

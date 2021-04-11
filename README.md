@@ -1,4 +1,6 @@
-## Streaming Project
+## Streaming Project (CRUD)
+
+- https://www.bmc.com/blogs/rest-vs-crud-whats-the-difference/
 
 #### Redux
 
@@ -8,7 +10,7 @@
     <App />
   </Provider>
 
-THe payload is not mandatory, but the type is.
+The payload is not mandatory, but the type is.
 
 Component will be connected with connect()
 
@@ -18,6 +20,10 @@ Component will be connected with connect()
 
 - PUT update all records for a specific ID
 - PATCH update some properties of a record
+
+#### React.Fragment
+
+<React.Fragment> (JSX) or <> </> to return multiple multiple DOM without impacting the styling (Do not generate HTML)
 
 #### Router
 

@@ -16,8 +16,8 @@ class List extends Component {
     if (stream.userId === this.props.currentActiveUserId) {
       return (
         <div className='col-span-12 lg:col-span-8'>
-          <a
-            href='#'
+          <Link
+            to={`/streams/delete/${stream.id}`}
             className='inline-block rounded-full text-white 
                   bg-red-400 hover:bg-red-500 duration-300 
                   text-xs font-bold 
@@ -25,7 +25,7 @@ class List extends Component {
                   opacity-90 hover:opacity-100'
           >
             Delete
-          </a>
+          </Link>
 
           <Link
             to={`/streams/edit/${stream.id}`}

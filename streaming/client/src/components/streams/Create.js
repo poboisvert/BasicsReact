@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { createStream } from '../../actions';
 //
-import Form from './Form';
+import Form from '../shared/Form';
 
 class Create extends Component {
   // Callback

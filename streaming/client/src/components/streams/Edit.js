@@ -4,7 +4,7 @@ import { fetchStream, editStream } from '../../actions';
 
 import _ from 'lodash';
 
-import From from './Form';
+import From from '../shared/Form';
 // THe issue with function is the lifecycle that do not fetch data if we go directly to /edit/2
 /* const Edit = (props) => {
   //console.log(props); // match params and then id

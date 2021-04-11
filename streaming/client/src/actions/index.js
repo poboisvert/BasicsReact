@@ -1,6 +1,6 @@
 import streams from '../api/streams';
 // Router history
-import history from '../history';
+import history from '../components/history';
 // Type to dispatch action
 import {
   SIGN_IN,
@@ -72,6 +72,9 @@ export const deleteStream = (id) => async (dispatch) => {
   await streams.delete(`/streams/${id}`);
 
   dispatch({ type: DELETE_STREAM, payload: id }); // Delete no res and only payload id
+
+  //Router
+  history.push('/');
 };
 
 /* 
