@@ -53,7 +53,7 @@ class List extends Component {
           <div id='header' className='flex'>
             <img
               alt='mountain'
-              className='rounded-md max-w-xs'
+              className='rounded-md w-48'
               src={
                 stream.image
                   ? stream.image
