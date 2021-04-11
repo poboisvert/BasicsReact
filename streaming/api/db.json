@@ -1,0 +1,23 @@
+{
+  "streams": [
+    {
+      "title": "Why do we use it?",
+      "description": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. ",
+      "id": 1
+    },
+    {
+      "title": "Where can I get some?",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
+      "image": "https://images.unsplash.com/photo-1509326066092-14b2e882fe86?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8YXJjdGljfGVufDB8fDB8&ixlib=rb-1.2.1&w=1000&q=80",
+      "userId": "104092693280555763556",
+      "id": 2
+    },
+    {
+      "title": "What is Lorem Ipsum?",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      "image": "https://www.meme-arsenal.com/memes/f608e99d270fdb388a50a3175613d2c2.jpg",
+      "userId": "104092693280555763556",
+      "id": 4
+    }
+  ]
+}

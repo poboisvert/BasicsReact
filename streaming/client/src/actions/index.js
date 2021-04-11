@@ -1,4 +1,6 @@
 import streams from '../api/streams';
+// Router history
+import history from '../history';
 // Type to dispatch action
 import {
   SIGN_IN,
@@ -36,15 +38,18 @@ export const signOut = () => {
 // Response logged
 export const createStream = (formValues) => async (dispatch, getState) => {
   const { userId } = getState().auth; // State REdux dev tool
-  const res = await streams.post('/streams', { ...formValues, userId }); // post request with folder API - Need a type to dispatch + get all previous and userId
+  const res = await streams.post('/streams', { ...formValues, userId }); // post request with folder API - Need a type to dispatch
 
   dispatch({ type: CREATE_STREAM, payload: res.data });
+  //Router
+  history.push('/');
 };
 
 // Streams many records (ACTION, METHOD, ROUTE, RESPONSE)
 export const fetchStreams = () => async (dispatch) => {
   const response = await streams.get('/streams');
 
+  // Dispatch Redux
   dispatch({ type: FETCH_STREAMS, payload: response.data });
 };
 // Stream fetch one (ACTION, METHOD, ROUTE, RESPONSE)
@@ -55,9 +60,12 @@ export const fetchStream = (id) => async (dispatch) => {
 };
 // Stream edit one (ACTION, METHOD, ROUTE, RESPONSE)
 export const editStream = (id, formValues) => async (dispatch) => {
-  const response = await streams.put(`/streams/${id}`, formValues);
+  const response = await streams.patch(`/streams/${id}`, formValues);
 
   dispatch({ type: EDIT_STREAM, payload: response.data });
+
+  //Router
+  history.push('/');
 };
 // Stream delete one (ACTION, METHOD, ROUTE, RESPONSE)
 export const deleteStream = (id) => async (dispatch) => {

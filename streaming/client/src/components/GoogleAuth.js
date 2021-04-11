@@ -52,7 +52,7 @@ class GoogleAuth extends Component {
         <button
           type='button'
           onClick={this.onSignOut}
-          className='focus:outline-none text-white text-sm py-2.5 px-5 rounded-md bg-red-500 hover:bg-red-600 hover:shadow-lg flex items-center'
+          className='focus:outline-none text-white text-sm py-2.5 px-5 rounded-md bg-gray-500 hover:bg-gray-600 hover:shadow-lg flex items-center'
         >
           <svg
             className='w-4 h-4 mr-2'

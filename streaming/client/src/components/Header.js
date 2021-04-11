@@ -15,42 +15,13 @@ const Header = () => {
                     to='/'
                     className='text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium'
                   >
-                    Home
-                  </Link>
-                  <Link
-                    to='/streams/new'
-                    className='text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium'
-                  >
-                    Create
-                  </Link>
-                  <Link
-                    to='/streams/delete'
-                    className='text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium'
-                  >
-                    Delete
-                  </Link>
-                  <Link
-                    to='/streams/edit'
-                    className='text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium'
-                  >
-                    Edit
-                  </Link>
-                  <Link
-                    to='/streams/list'
-                    className='text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium'
-                  >
-                    List
+                    Soda Stream
                   </Link>
                 </div>
               </div>
             </div>
-            <div className='hidden md:block'>
-              <div className='ml-4 flex items-center md:ml-6'>
-                <button className='bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white'>
-                  <span className='sr-only'>View notifications</span>
-                  <GoogleAuth />
-                </button>
-              </div>
+            <div className='bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white'>
+              <GoogleAuth />
             </div>
           </div>
         </div>
