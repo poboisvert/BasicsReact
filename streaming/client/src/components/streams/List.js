@@ -67,9 +67,7 @@ class List extends Component {
               <p id='job' className='text-gray-800 mt-2'>
                 {stream.description}
               </p>
-              <div className='flex mt-5'>
-                <p className='ml-3'>{this.renderButtonsLogic(stream)}</p>
-              </div>
+              <div className='flex mt-5'>{this.renderButtonsLogic(stream)}</div>
             </div>
           </div>
         </div>
