@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 //Redux
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 // Type for Redux
 import { fetchStreams } from '../../actions';
 
@@ -45,7 +46,7 @@ class List extends Component {
   renderList() {
     return this.props.streams.map((stream) => {
       return (
-        <div className='flex-initial bg-white rounded-lg shadow-sm px-2 sm:px-6 md:px-2 py-4 my-6'>
+        <div className='bg-white rounded-lg px-2 sm:px-6 md:px-2 py-4 my-6'>
           <div className='grid grid-cols-12 gap-3'>
             {/*        <!-- Meta Column --> */}
             <div className='col-span-0 sm:col-span-2 text-center hidden sm:block'>
@@ -138,11 +139,48 @@ class List extends Component {
     });
   }
 
+  // Helper if login to create a post
+  renderAddCreate() {
+    if (this.props.isSignedIn) {
+      return (
+        <>
+          <div className='bg-white rounded-lg px-2 sm:px-6 md:px-2 py-4 my-6'>
+            <Link to='/streams/new'>
+              {/*            https://heroicons.com/ */}
+              <button
+                type='button'
+                className='focus:outline-none text-white text-sm py-2.5 px-5 rounded-md bg-blue-500 hover:bg-blue-600 hover:shadow-lg'
+              >
+                <svg
+                  xmlns='http://www.w3.org/2000/svg'
+                  className='h-6 w-6'
+                  fill='none'
+                  viewBox='0 0 24 24'
+                  stroke='currentColor'
+                >
+                  <path
+                    strokeLinecap='round'
+                    strokeLinejoin='round'
+                    strokeWidth={2}
+                    d='M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z'
+                  />
+                </svg>
+              </button>
+            </Link>
+          </div>
+        </>
+      );
+    }
+  }
   // Render user
   render() {
     // console.log(this.props.streams);
     return (
       <div className='flex flex-col mx-auto px-20'>
+        {/*      Button Navigation */}
+        {this.renderAddCreate()}
+
+        {/*       Display content */}
         <div>{this.renderList()}</div>
       </div>
     );
@@ -153,6 +191,7 @@ const mapStateToProps = (state) => {
   return {
     streams: Object.values(state.streams),
     currentActiveUserId: state.auth.userId, // Signed In user
+    isSignedIn: state.auth.isSignedIn, // Redux Dev Tool
   }; // Redux object and mapStateToProps is an array (easier)
 };
 export default connect(mapStateToProps, { fetchStreams })(List);

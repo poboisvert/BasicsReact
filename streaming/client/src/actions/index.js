@@ -36,7 +36,7 @@ export const signOut = () => {
 // Response logged
 export const createStream = (formValues) => async (dispatch, getState) => {
   const { userId } = getState().auth; // State REdux dev tool
-  const res = await streams.post('/streams', { ...formValues, userId }); // post request with folder API - Need a type to dispatch + get all previous and userId
+  const res = await streams.post('/streams', { ...formValues, userId }); // post request with folder API - Need a type to dispatch
 
   dispatch({ type: CREATE_STREAM, payload: res.data });
 };

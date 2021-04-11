@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
+import { connect } from 'react-redux';
+import { createStream } from '../../actions';
 
 class Create extends Component {
   renderError({ error, touched }) {
@@ -27,9 +29,9 @@ class Create extends Component {
       </div>
     );
   };
-  onSubmit(e) {
-    console.log(e);
-  }
+  onSubmit = (formValues) => {
+    this.props.createStream(formValues);
+  };
 
   render() {
     //console.log(this.props);
@@ -64,14 +66,22 @@ class Create extends Component {
 
 const validate = (formValues) => {
   const errors = {};
+
   if (!formValues.title) {
-    errors.title = 'A valid title must be provide';
+    errors.title = 'You must enter a title';
   }
+
   if (!formValues.description) {
-    errors.description = 'A valid title must be a description';
+    errors.description = 'You must enter a description';
   }
 
   return errors;
 };
+/* export default reduxForm({ form: 'create', validate: validate })(Create);
+ */
+const formWrapped = reduxForm({
+  form: 'createStream',
+  validate,
+})(Create);
 
-export default reduxForm({ form: 'create', validate: validate })(Create);
+export default connect(null, { createStream })(formWrapped);
