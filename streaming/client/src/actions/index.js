@@ -1,4 +1,6 @@
 import streams from '../api/streams';
+// Router history
+import history from '../history';
 // Type to dispatch action
 import {
   SIGN_IN,
@@ -39,12 +41,15 @@ export const createStream = (formValues) => async (dispatch, getState) => {
   const res = await streams.post('/streams', { ...formValues, userId }); // post request with folder API - Need a type to dispatch
 
   dispatch({ type: CREATE_STREAM, payload: res.data });
+  //Router
+  history.push('/');
 };
 
 // Streams many records (ACTION, METHOD, ROUTE, RESPONSE)
 export const fetchStreams = () => async (dispatch) => {
   const response = await streams.get('/streams');
 
+  // Dispatch Redux
   dispatch({ type: FETCH_STREAMS, payload: response.data });
 };
 // Stream fetch one (ACTION, METHOD, ROUTE, RESPONSE)

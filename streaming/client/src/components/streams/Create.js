@@ -6,7 +6,28 @@ import { createStream } from '../../actions';
 class Create extends Component {
   renderError({ error, touched }) {
     if (touched && error) {
-      return <div className='pt-2 text-yellow-700'>{error}</div>;
+      return (
+        <div class='flex w-full max-w-sm mx-auto overflow-hidden bg-white rounded-lg m-2'>
+          <div class='flex items-center justify-center w-12 bg-red-500'>
+            <svg
+              class='w-6 h-6 text-white fill-current'
+              viewBox='0 0 40 40'
+              xmlns='http://www.w3.org/2000/svg'
+            >
+              <path d='M20 3.36667C10.8167 3.36667 3.3667 10.8167 3.3667 20C3.3667 29.1833 10.8167 36.6333 20 36.6333C29.1834 36.6333 36.6334 29.1833 36.6334 20C36.6334 10.8167 29.1834 3.36667 20 3.36667ZM19.1334 33.3333V22.9H13.3334L21.6667 6.66667V17.1H27.25L19.1334 33.3333Z' />
+            </svg>
+          </div>
+
+          <div class='px-4 py-2 -mx-3'>
+            <div class='mx-3'>
+              <span class='font-semibold text-red-500 dark:text-red-400'>
+                Error
+              </span>
+              <p class='text-sm text-gray-600 dark:text-gray-200'>{error}</p>
+            </div>
+          </div>
+        </div>
+      );
     }
   }
 
@@ -25,7 +46,7 @@ class Create extends Component {
           {...input}
           className='w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500'
         />
-        <div>{this.renderError(meta)}</div>
+        {this.renderError(meta)}
       </div>
     );
   };
@@ -48,6 +69,11 @@ class Create extends Component {
               name='description'
               component={this.renderInput}
               label='Enter Description'
+            />
+            <Field
+              name='image'
+              component={this.renderInput}
+              label='Image URL'
             />
             <div class='mb-6'>
               <button
@@ -73,6 +99,9 @@ const validate = (formValues) => {
 
   if (!formValues.description) {
     errors.description = 'You must enter a description';
+  }
+  if (!formValues.image) {
+    errors.image = 'You must enter an image url';
   }
 
   return errors;

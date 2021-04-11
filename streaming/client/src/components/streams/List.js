@@ -27,8 +27,8 @@ class List extends Component {
             Delete
           </a>
 
-          <a
-            href='#'
+          <Link
+            to={`/streams/edit/${stream.id}`}
             className='inline-block rounded-full text-white 
                   bg-green-400 hover:bg-green-500 duration-300 
                   text-xs font-bold 
@@ -36,7 +36,7 @@ class List extends Component {
                   opacity-90 hover:opacity-100'
           >
             Edit
-          </a>
+          </Link>
         </div>
       );
     }
@@ -46,91 +46,29 @@ class List extends Component {
   renderList() {
     return this.props.streams.map((stream) => {
       return (
-        <div className='bg-white rounded-lg px-2 sm:px-6 md:px-2 py-4 my-6'>
-          <div className='grid grid-cols-12 gap-3'>
-            {/*        <!-- Meta Column --> */}
-            <div className='col-span-0 sm:col-span-2 text-center hidden sm:block'>
-              {/*      <!-- Answer Counts --> */}
-              <a
-                href='#'
-                className='grid grid-rows-2 mx-auto mb-3 py-1 w-4/5 2lg:w-3/5 rounded-md bg-green-400'
-              >
-                <div className='inline-block font-medium text-2xl text-white'>
-                  12
-                </div>
-
-                <div className='inline-block font-medium text-white mx-1 text-sm lg:text-md'>
-                  Answers
-                </div>
-              </a>
-            </div>
-            {/*   <!-- Summary Column --> */}
-            <div className='col-span-12 sm:col-start-3 sm:col-end-13 px-3 sm:px-0'>
-              <div className='grid block sm:hidden'>
-                <div className='flex flex-wrap'>
-                  <div className='mr-2'>
-                    <div className='inline-block font-light capitalize'>
-                      <i className='uil uil-arrow-circle-up mr-1'></i>
-                      <span className='text-sm'>21 Votes</span>
-                    </div>
-                  </div>
-                  <div className='mr-2'>
-                    <div className='inline-block font-light capitalize'>
-                      <i className='uil uil-check-circle mr-1'></i>
-                      <span className='text-sm'>21 Answers</span>
-                    </div>
-                  </div>
-                  <div className='mr-2'>
-                    <div className='inline-block'>
-                      <i className='uil uil-eye mr-1'></i>
-                      <span className='text-sm capitalize font-light'>
-                        21 Views
-                      </span>
-                    </div>
-                  </div>
-
-                  <div className='mr-2'>
-                    <div className='inline-block'>
-                      <i className='uil uil-clock mr-1'></i>
-                      <span className='text-sm font-light'>
-                        a few mins ago ago
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class='mt-2'>
-                <a
-                  href='#'
-                  className='sm:text-sm md:text-md lg:text-lg text-gray-700 font-bold hover:underline'
-                >
-                  {stream.title}
-                </a>
-
-                <p className='mt-2 text-gray-600 text-sm md:text-md'>
-                  {stream.description}
-                </p>
-              </div>
-
-              {/*   <!-- Question Labels --> */}
-              <div className='grid grid-cols-2 mt-4 my-auto'>
-                {this.renderButtonsLogic(stream)}
-
-                {/*        <!-- User --> */}
-                <div className='col-none hidden mr-2 lg:block lg:col-start-9 lg:col-end-12'>
-                  <a href='#' className='flex items-center'>
-                    <img
-                      src='https://avatarfiles.alphacoders.com/165/thumb-1920-165285.png'
-                      alt='avatar'
-                      className='mr-2 w-8 h-8 rounded-full'
-                    />
-
-                    <div className='text-gray-600 font-bold text-sm hover:underline'>
-                      {this.currentActiveUserId}
-                    </div>
-                  </a>
-                </div>
+        <div
+          key={stream.title}
+          className='bg-white rounded-lg px-2 sm:px-6 md:px-2 py-4 my-6'
+        >
+          <div id='header' className='flex'>
+            <img
+              alt='mountain'
+              className='rounded-md max-w-xs'
+              src={
+                stream.image
+                  ? stream.image
+                  : 'https://tailwindcss.com/_next/static/media/twitter-square.daf77586b35e90319725e742f6e069f9.jpg'
+              }
+            />
+            <div id='body' className='flex flex-col ml-5'>
+              <h4 id='name' className='text-xl font-semibold mb-2'>
+                {stream.title}
+              </h4>
+              <p id='job' className='text-gray-800 mt-2'>
+                {stream.description}
+              </p>
+              <div className='flex mt-5'>
+                <p className='ml-3'>{this.renderButtonsLogic(stream)}</p>
               </div>
             </div>
           </div>
