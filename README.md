@@ -1,3 +1,28 @@
+## Streaming Project
+
+#### Redux
+
+![preview](redux.png)
+
+  <Provider store="createStore(reducers)">
+    <App />
+  </Provider>
+
+THe payload is not mandatory, but the type is.
+
+Component will be connected with connect()
+
+- Reducer wil return something and not undefined
+
+(REDUX) -> MapStateToProps -> (COMPONENT)(props) -> DOM
+
+- PUT update all records for a specific ID
+- PATCH update some properties of a record
+
+#### Router
+
+Each module must fetch his own data to avoid undefined when only using the url like /edit/2
+
 ## JSX Project
 
 ### JSX Folder classes based
@@ -128,22 +153,6 @@ Will run at initial, every rerender
   });
   ```
 
-#### Redux
-
-![preview](redux.png)
-
-  <Provider store="createStore(reducers)">
-    <App />
-  </Provider>
-
-THe payload is not mandatory, but the type is.
-
-Component will be connected with connect()
-
-- Reducer wil return something and not undefined
-
-(REDUX) -> MapStateToProps -> (COMPONENT)(props) -> DOM
-
 #### Export
 
 - import aaa if export default aaa
@@ -155,3 +164,7 @@ Component will be connected with connect()
 Javascript helper
 Object => {}
 Array => []
+
+### Webpack
+
+https://webpack.js.org/guides/shimming/

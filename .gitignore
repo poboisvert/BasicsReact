@@ -25,6 +25,11 @@ advanced/package-lock.json
 streaming/client/node_modules
 streaming/client/package-lock.json
 
+streaming/api/node_modules
+streaming/api/package-lock.json
+
+
+
 
 # Distribution / packaging
 .Python
