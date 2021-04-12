@@ -62,7 +62,7 @@ class List extends Component {
             />
             <div id='body' className='flex flex-col ml-5'>
               <h4 id='name' className='text-xl font-semibold mb-2'>
-                {stream.title}
+                <Link to={`/streams/${stream.id}`}>{stream.title}</Link>
               </h4>
               <p id='job' className='text-gray-800 mt-2'>
                 {stream.description}
