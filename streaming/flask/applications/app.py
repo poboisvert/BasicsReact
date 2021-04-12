@@ -35,15 +35,56 @@
 from flask import request, render_template, jsonify, url_for, redirect
 from index import app, db
 from sqlalchemy.exc import IntegrityError
-
+from flask_restful import Resource, reqparse
 
 # Model DB
 from .models import StreamModel
 
+# GET Route - / - Hello World
 @app.route('/', methods=['GET'])
 def index():
     return 'Hello, World!'
 
+# GET Route - /streams
 @app.route("/streams", methods=["GET"])
-def get_user():
-    return {"streams":{"id":"2", "title": "Why do we use it?", "description": "description1", "userId": "userId1", "image": "https://www.meme-arsenal.com/memes/f608e99d270fdb388a50a3175613d2c2.jpg"}}
+def get():
+    # https://stackabuse.com/using-sqlalchemy-with-flask-and-postgresql/
+    # https://www.programiz.com/python-programming/nested-dictionary
+
+    # Create payload
+    payloads = StreamModel.query.all()
+    # print(payloads)
+
+    return jsonify([{'title': x.title, 'description': x.description, 'image': x.image, 'userId': x.userId, 'id': x.id} for x in payloads])
+    # return jsonify(streams=[payload.serialize for payload in payloads]) 
+    # return {"streams": {list(map(lambda x: jsonify(x), StreamModel.query.all()))}}
+    #return {"streams":{"id":"2", "title": "Why do we use it?", "description": "description1", "userId": "userId1", "image": "https://www.meme-arsenal.com/memes/f608e99d270fdb388a50a3175613d2c2.jpg"}}
+
+# POST Route - /streams
+@app.route("/streams", methods=["POST"])
+def create_post():
+
+    # Aggregate information POST
+    data = request.get_json()
+    print(data)
+
+    stream = StreamModel(
+        title=data["title"],
+        description=data["description"],
+        userId=data["userId"],
+        image=data["image"]
+    )
+
+    # Preparation sotrage to save
+    db.session.add(stream)
+    
+    market = StreamModel(data['title'], data['description'], data['userId'], data['image'])
+    # Save to DB
+    try:
+        market.save_to_db()
+    except:
+        return {"message": "An error occurred inserting the stream."}
+    # JSONIFY the return - interface
+    return jsonify(
+        id=market.id,
+    )

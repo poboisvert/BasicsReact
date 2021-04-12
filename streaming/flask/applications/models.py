@@ -7,21 +7,27 @@ class StreamModel(db.Model):
     # Database variables
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(80))
+    userId = db.Column(db.String(80))
     description = db.Column(db.String(80))
     image = db.Column(db.String(80))
 
-    def __init__(self, title, description, baseURL):
+    def __init__(self, title, description, userId, image):
         self.title = title
         self.description = description
+        self.userId = userId
         self.image = image
 
-
-    def json(self):
-        return {'title': self.description, 'description': self.description, 'image': self.image }
+    @property
+    def serialize(self):
+        return {'title': self.title, 'description': self.description, 'userId': self.userId, 'image': self.image}
 
     @classmethod
     def find_by_name(cls, title):
         return cls.query.filter_by(title=title).first()
+
+    @classmethod
+    def find_all_new_output(cls):
+        return {ix: {i.title, i.description, i.image} for ix, i in enumerate(obs)}
 
     @classmethod
     def find_all(cls):
