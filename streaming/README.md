@@ -16,6 +16,30 @@ With the software OBS, React JS and Redux, this application offer a user interfa
 
 ## Backend V2 - Python - Flask (Pending)
 
+### Virtual Environment
+
+> source env/bin/activate
+
+### Database
+
+This project use a database named "streams". Below are the commands to validate the active DB.
+
+Source: https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/
+
+### Commands
+
+> python manage.py create_db
+
+> python manage.py runserver
+
+##### Commande - Cheatsheet
+
+> show dbs
+
+> use streams
+
+> db.streams.find()
+
 ## RTMS
 
 > cd rtmpserver

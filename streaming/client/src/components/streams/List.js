@@ -44,6 +44,7 @@ class List extends Component {
 
   // RenderHelper
   renderList() {
+    console.log(this.props.streams);
     return this.props.streams.map((stream) => {
       return (
         <div
