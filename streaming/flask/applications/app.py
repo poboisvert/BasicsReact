@@ -121,12 +121,19 @@ def create_post():
 @app.route("/streams/<int:page_id>", methods=["PATCH"])
 def patch_collection(page_id):
     # Aggregate information POST
-    #data = request.get_json()
+    # data = request.get_json()
+    # https://williamdurand.fr/2014/02/14/please-do-not-patch-like-an-idiot/
     stream = StreamModel.query.get_or_404(page_id)
-    .patch(stream)
+    
+    if 'title' in request.json:
+            stream.title = request.json['title']
+    if 'description' in request.json:
+            stream.description = request.json['description']
+    if 'image' in request.json:
+            stream.image = request.json['image']
 
     db.session.commit()
-    return jsonify(stream.asdict())
+    return f"<h1>Patch {page_id}</h1>"
 
 # DELETE Route - /streams
 # ========================================
