@@ -14,7 +14,7 @@ With the software OBS, React JS and Redux, this application offer a user interfa
 
 > npm start
 
-## Backend V2 - Python - Flask (Pending)
+## Backend V2 - Python - Flask
 
 ### Virtual Environment
 
@@ -31,14 +31,6 @@ Source: https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/
 > python manage.py create_db
 
 > python manage.py runserver
-
-##### Commande - Cheatsheet
-
-> show dbs
-
-> use streams
-
-> db.streams.find()
 
 ## RTMS
 
