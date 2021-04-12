@@ -1,13 +1,23 @@
+## Project Overview
+
+With the software OBS, React JS and Redux, this application offer a user interface to add, edit and delete streaming channel.
+
 ## Client
 
-- cd client
+> cd client
 
-- npm start
+> npm start
 
-## API
+## Backend V1 - API (JSON Server)
 
-- cd api
+> cd api
 
-- npm start
+> npm start
 
-## Flask (Pending)
+## Backend V2 - APython - Flask (Pending)
+
+## RTMS
+
+> cd rtmpserver
+
+> npm start
