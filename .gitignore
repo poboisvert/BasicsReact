@@ -29,6 +29,11 @@ streaming/api/node_modules
 streaming/api/package-lock.json
 
 
+streaming/rtmpserver/node_modules
+streaming/rtmpserver/package-lock.json
+
+
+
 
 
 # Distribution / packaging

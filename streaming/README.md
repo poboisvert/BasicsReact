@@ -14,7 +14,7 @@ With the software OBS, React JS and Redux, this application offer a user interfa
 
 > npm start
 
-## Backend V2 - APython - Flask (Pending)
+## Backend V2 - Python - Flask (Pending)
 
 ## RTMS
 

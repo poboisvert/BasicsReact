@@ -29,6 +29,19 @@ Component will be connected with connect()
 
 Each module must fetch his own data to avoid undefined when only using the url like /edit/2
 
+- we use { Switch } when the URL import 2 components by mistake
+
+```
+                <Switch>
+                  <Route path='/' exact component={List} />
+                  <Route path='/streams/new' exact component={Create} />
+                  {/* EDIT */}
+                  <Route path='/streams/edit/:id' exact component={Edit} />
+                  <Route path='/streams/delete/:id' exact component={Delete} />
+                  <Route path='/streams/:id' exact component={Show} />
+                </Switch>
+```
+
 ## JSX Project
 
 ### JSX Folder classes based
@@ -168,8 +181,9 @@ Will run at initial, every rerender
 ### LODASH
 
 Javascript helper
-Object => {}
-Array => []
+
+- Object => {}
+- Array => []
 
 ### Webpack
 
