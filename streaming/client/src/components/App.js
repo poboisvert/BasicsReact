@@ -18,7 +18,7 @@ const App = () => {
   return (
     <>
       <main>
-        {/*      No BrowserRouter */}
+        {/* No BrowserRouter */}
 
         <Router history={history}>
           {/* Header */}
