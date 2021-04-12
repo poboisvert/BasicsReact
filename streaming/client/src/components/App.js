@@ -3,7 +3,7 @@ import React from 'react';
 // Router
 /* import { BrowserRouter, Route } from 'react-router-dom';
  */
-import { Router, Route } from 'react-router-dom';
+import { Router, Route, Switch } from 'react-router-dom';
 import history from './history';
 
 // components
@@ -28,12 +28,14 @@ const App = () => {
             <div className=' container mx-auto px-4 mx-auto px-4 py-6 sm:px-0'>
               <div className=' border-4 border-dashed border-gray-200 rounded-lg'>
                 {/* Routes */}
-                <Route path='/' exact component={List} />
-                <Route path='/streams/new' exact component={Create} />
-                {/* EDIT */}
-                <Route path='/streams/edit/:id' exact component={Edit} />
-                <Route path='/streams/delete/:id' exact component={Delete} />
-                <Route path='/streams/show' exact component={Show} />
+                <Switch>
+                  <Route path='/' exact component={List} />
+                  <Route path='/streams/new' exact component={Create} />
+                  {/* EDIT */}
+                  <Route path='/streams/edit/:id' exact component={Edit} />
+                  <Route path='/streams/delete/:id' exact component={Delete} />
+                  <Route path='/streams/:id' exact component={Show} />
+                </Switch>
               </div>
             </div>
           </div>
