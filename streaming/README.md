@@ -37,3 +37,7 @@ Source: https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/
 > cd rtmpserver
 
 > npm start
+> 
+## Pytest
+
+> python -m pytest 
