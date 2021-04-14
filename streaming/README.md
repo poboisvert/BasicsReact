@@ -18,7 +18,13 @@ With the software OBS, React JS and Redux, this application offer a user interfa
 
 ### Virtual Environment
 
+> python3 -m venv env
+
 > source env/bin/activate
+
+## Backend V3 - Python - FastAPI
+
+(Pending)
 
 ### Database
 
@@ -37,7 +43,13 @@ Source: https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/
 > cd rtmpserver
 
 > npm start
-> 
+
 ## Pytest
 
-> python -m pytest 
+> python -m pytest
+
+### Freeze
+
+> python3 -m pip freeze
+
+> python3 -m pip install -r requirements.txt
