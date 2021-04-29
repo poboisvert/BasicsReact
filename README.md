@@ -1,4 +1,4 @@
-## Streaming Project (CRUD)
+## Streaming Project (CRUD) - Flask, FastAPI and React
 
 - https://www.bmc.com/blogs/rest-vs-crud-whats-the-difference/
 - Refer to Readme in /streaming for more
