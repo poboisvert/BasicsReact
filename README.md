@@ -1,6 +1,7 @@
 ## Streaming Project (CRUD)
 
 - https://www.bmc.com/blogs/rest-vs-crud-whats-the-difference/
+- Refer to Readme in /streaming for more
 
 #### Redux
 
