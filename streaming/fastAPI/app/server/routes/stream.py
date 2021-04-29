@@ -1,5 +1,6 @@
 from fastapi import APIRouter, Body
 from fastapi.encoders import jsonable_encoder
+from fastapi.responses import JSONResponse
 
 from server.database import (
     add_stream,
@@ -25,7 +26,7 @@ async def add_stream_data(stream: StreamSchema = Body(...)):
     return ResponseModel(new_stream, "Stream added successfully.")
 
 
-@router.get("/", response_description="Stream retreived from the database")
+@router.get("/streams", response_description="Stream retreived from the database")
 async def get_streams_data():
-    new_stream = await retrieve_streams()
-    return ResponseModel(new_stream, "Stream added successfully.")
+    all_stream = await retrieve_streams()
+    return ResponseModel(all_stream, "Stream added successfully.")

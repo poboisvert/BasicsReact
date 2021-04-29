@@ -1,6 +1,7 @@
 from typing import Optional
 from pydantic import BaseModel, EmailStr, Field
 
+
 class StreamSchema(BaseModel):
     title: str = Field(...)
     description: str = Field(...)
@@ -9,7 +10,6 @@ class StreamSchema(BaseModel):
     #email: EmailStr = Field(...)
     #date: int = Field(..., gt=0, lt=9)
     #flot: float = Field(..., le=4.0)
-
 
     # Database variables - FLASK
     #id = db.Column(db.Integer, primary_key=True)
@@ -27,6 +27,7 @@ class StreamSchema(BaseModel):
                 "image": "http://test.test",
             }
         }
+
 
 class UpdateStreamModel(BaseModel):
     title: Optional[str]
@@ -47,12 +48,14 @@ class UpdateStreamModel(BaseModel):
             }
         }
 
+
 def ResponseModel(data, message):
     return {
-        "data": [data],
+        "data": [data]
         "code": 200,
         "message": message,
     }
+
 
 def ErrorResponseModel(error, code, message):
     return {"error": error, "code": code, "message": message}
