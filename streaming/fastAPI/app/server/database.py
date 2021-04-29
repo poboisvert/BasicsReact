@@ -17,10 +17,11 @@ def stream_helper(stream) -> dict:
         "description": stream["description"],
         "userId": stream["userId"],
         "image": stream["image"],
-
     }
 
 # Retrieve all streams present in the database
+
+
 async def retrieve_streams():
     streams = []
     async for stream in stream_collection.find():
