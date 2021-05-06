@@ -3,6 +3,20 @@
 - https://www.bmc.com/blogs/rest-vs-crud-whats-the-difference/
 - Refer to Readme in /streaming for more
 
+### Virtual Env.
+
+If virtual env:
+
+> python3 -m venv env
+
+> source env/bin/activate
+
+### Flask
+
+> cd flask
+
+> python manage.py
+
 #### Redux
 
 ![preview](redux.png)

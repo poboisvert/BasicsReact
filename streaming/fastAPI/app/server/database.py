@@ -14,6 +14,7 @@ stream_collection = database.get_collection("streams_collection")
 def stream_helper(stream) -> dict:
     return {
         "id": str(stream["_id"]),
+        "title": str(stream["title"]),
         "description": stream["description"],
         "userId": stream["userId"],
         "image": stream["image"],

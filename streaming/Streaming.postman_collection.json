@@ -1,0 +1,186 @@
+{
+	"info": {
+		"_postman_id": "84134f37-a797-4406-9344-016542873e81",
+		"name": "Streaming",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "POST",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"title\": \"1234 Why do we use it?\", \n\"description\": \"description2\", \n\"userId\": \"userId22\", \n\"image\": \"https://www.meme-arsenal.com/memes/f608e99d270fdb388a50a3175613d2c2.jpg\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3001/streams",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"streams"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Patch ID",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"title\": \"66666 Why do we use it?\", \n\"description\": \"description2\", \n\"userId\": \"userId22\", \n\"image\": \"https://www.meme-arsenal.com/memes/f608e99d270fdb388a50a3175613d2c2.jpg\"\n}"
+				},
+				"url": {
+					"raw": "localhost:3001/streams/2",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"streams",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET /",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"id\":\"2\", \n\"title\": \"Why do we use it?\", \n\"description\": \"description1\", \n\"userId\": \"userId1\", \n\"image\": \"https://www.meme-arsenal.com/memes/f608e99d270fdb388a50a3175613d2c2.jpg\"\n}"
+				},
+				"url": {
+					"raw": "localhost:3001/",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Streams",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"id\":\"2\", \n\"title\": \"Why do we use it?\", \n\"description\": \"description1\", \n\"userId\": \"userId1\", \n\"image\": \"https://www.meme-arsenal.com/memes/f608e99d270fdb388a50a3175613d2c2.jpg\"\n}"
+				},
+				"url": {
+					"raw": "localhost:3001/streams",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"streams"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Stream ONE",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"id\":\"2\", \n\"title\": \"Why do we use it?\", \n\"description\": \"description1\", \n\"userId\": \"userId1\", \n\"image\": \"https://www.meme-arsenal.com/memes/f608e99d270fdb388a50a3175613d2c2.jpg\"\n}"
+				},
+				"url": {
+					"raw": "localhost:3001/streams/1",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"streams",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DEL Stream ONE",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3001/streams/1",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"streams",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

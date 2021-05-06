@@ -50,11 +50,7 @@ class UpdateStreamModel(BaseModel):
 
 
 def ResponseModel(data, message):
-    return {
-        "data": [data]
-        "code": 200,
-        "message": message,
-    }
+    return data
 
 
 def ErrorResponseModel(error, code, message):
